@@ -826,7 +826,7 @@ div#ambassador-carousel a.ambBtn {
     font-size: 21px;
     background-color: #a93439;
     color: #eee7d9;
-    padding: 0.5% 2%;
+    padding: 23px 13px 11px 10px;
     text-transform: uppercase;
     text-decoration: none;
     -webkit-transition: all ease-in-out .5s;
@@ -1015,7 +1015,7 @@ div#ambassador-carousel.sky-carousel {
 
 /**
 *	Table of Contents
-*	
+*
 *	1. Media Queries
 *	2. Container Styles
 *	3. Carousel Item Styles
@@ -3294,4 +3294,3 @@ body.logged-in .YouTubePopUp-Wrap { /* For WordPress */
 }
 
 /*#endregion*/
-
