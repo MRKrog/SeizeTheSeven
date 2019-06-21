@@ -1,0 +1,3297 @@
+﻿
+
+/* #region FONTS
+ * --------------------------------------- */
+
+@font-face {
+    font-family: 'dukefill';
+    src: url('../fonts/SeizeFonts/Duke-Fill.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tungsten';
+    src: url('../fonts/SeizeFonts/Tungsten.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Whitney';
+    src: url('../fonts/SeizeFonts/Whitney.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*#endregion FONTS*/
+
+
+/* #region GLOBAL FORMATTING
+ * --------------------------------------- */
+
+@CHARSET "ISO-8859-1";
+/* Reset CSS
+ * --------------------------------------- */
+
+html {
+    font-family: 'dukefill';
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
+form, fieldset, input, textarea, p, blockquote, th, td {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+table {
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    color: #444;
+}
+
+HTML, body {
+    padding: 0;
+    margin: 0;
+    height: auto;
+}
+
+.imgFull > img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.imgFullWidth {
+    width: 100%;
+    max-width: 100%;
+}
+
+.container {
+    width: 100%;
+}
+
+div#maryJane {
+    display: none;
+}
+
+section.SeizeContainer {
+    display: block;
+}
+
+.slicknav_menu {
+    display: none;
+}
+
+div.logoOff {
+    display: none;
+}
+
+span#upgradeBrowser {
+    display: none;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    padding: 50px 0;
+    text-transform: uppercase;
+    font-family: 'dukefill';
+}
+
+@media screen and (max-width: 40em) {
+    /* #menu is the original menu */
+    .js #menu {
+        display: none;
+    }
+
+    .js .slicknav_menu {
+        display: block;
+    }
+
+    li#navSpacer {
+        display: none;
+    }
+
+    /*Navigation*/
+    #menu ul li {
+        display: block;
+    }
+
+    li.slicknav_txtnode {
+        display: none !Important;
+    }
+
+    li.heading-logo {
+        display: none !Important;
+    }
+
+    div.logoOff {
+        display: block;
+    }
+}
+
+/*#endregion*/
+
+
+/* #region Top Menu CSS
+ * --------------------------------------- */
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: auto;
+    z-index: 1039;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: rgba(243, 230, 203, 0.95);
+    box-shadow: 0 5px 5px 0 rgba(68,68,68,0.6);
+}
+
+    #menu li.heading-logo {
+        position: absolute;
+        left: 2%;
+        top: 0px;
+        z-index: 1050;
+    }
+
+        #menu li.heading-logo div.mainLogo {
+            width: 100%;
+            max-width: 156px;
+            background-color: #a33033;
+            -webkit-transition: all ease-in-out .7s;
+            -moz-transition: all ease-in-out .7s;
+            -o-transition: all ease-in-out .7s;
+            transition: all ease-in-out .7s;
+        }
+
+            #menu li.heading-logo div.mainLogo:hover {
+                background-color: #000;
+            }
+
+            #menu li.heading-logo div.mainLogo img {
+                width: 100%;
+                max-width: 100%;
+                /*animation effects*/
+                -moz-animation-duration: .2s;
+                -webkit-animation-delay: .2s;
+                -o-animation-iteration-count: infinite;
+            }
+
+    #menu ul {
+        padding: .5% 0px;
+    }
+
+        #menu ul li {
+            display: inline-block;
+            font-size: 3.5em;
+            text-transform: uppercase;
+        }
+
+            #menu ul li:first-child {
+                font-size: 0em;
+            }
+
+            #menu ul li:not(:first-child) {
+                margin-left: 3.3%;
+            }
+
+    #menu li#navSpacer {
+        width: 100%;
+        max-width: 123px;
+    }
+
+    #menu li a {
+        text-decoration: none;
+        color: #a33033;
+        display: inline-block;
+        line-height: 90%;
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+    }
+
+        #menu li a.firstNav {
+            text-decoration: none;
+            color: #231f20;
+            display: block;
+            border-top: 0px solid transparent;
+            padding: 10% 10%;
+            border-bottom: 0px solid transparent;
+        }
+
+        #menu li a:hover {
+            color: #231f20;
+            border-color: #a33033;
+            -webkit-transition: all ease-in-out .7s;
+            -moz-transition: all ease-in-out .7s;
+            -o-transition: all ease-in-out .7s;
+            transition: all ease-in-out .7s;
+            text-decoration: none;
+        }
+
+    #menu li.active a {
+        color: #231f20;
+    }
+
+.navbar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.container {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+
+
+/*#endregion*/
+
+
+/* #region SLICK MENU
+ * --------------------------------------- */
+.slicknav_btn, .slicknav_nav .slicknav_item {
+    cursor: pointer;
+}
+
+.slicknav_menu, .slicknav_menu * {
+    box-sizing: border-box;
+}
+
+.slicknav_btn {
+    position: relative;
+    display: block;
+    vertical-align: middle;
+    float: right;
+    padding: .438em .625em;
+    line-height: 1.125em;
+}
+
+    .slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar {
+        margin-top: .188em;
+    }
+
+.slicknav_menu .slicknav_menutxt {
+    display: block;
+    line-height: 1.188em;
+    float: left;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 0 1px 3px #000;
+}
+
+.slicknav_menu .slicknav_icon {
+    float: left;
+    width: 1.125em;
+    height: .875em;
+    margin: .188em 0 0 .438em;
+}
+
+    .slicknav_menu .slicknav_icon:before {
+        background: 0 0;
+        width: 1.125em;
+        height: .875em;
+        display: block;
+        content: "";
+        position: absolute;
+    }
+
+.slicknav_menu .slicknav_no-text {
+    margin: 0;
+}
+
+.slicknav_menu .slicknav_icon-bar {
+    display: block;
+    width: 1.125em;
+    height: .125em;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,.25);
+    -moz-box-shadow: 0 1px 0 rgba(0,0,0,.25);
+    box-shadow: 0 1px 0 rgba(0,0,0,.25);
+}
+
+.slicknav_menu:after, .slicknav_menu:before {
+    content: " ";
+    display: table;
+}
+
+.slicknav_menu:after {
+    clear: both;
+}
+
+.slicknav_nav li, .slicknav_nav ul {
+    display: block;
+}
+
+.slicknav_nav .slicknav_arrow {
+    font-size: .8em;
+    margin: 0 0 0 .4em;
+}
+
+.slicknav_nav .slicknav_item a {
+    display: inline;
+}
+
+.slicknav_nav .slicknav_row, .slicknav_nav a {
+    display: block;
+}
+
+.slicknav_nav .slicknav_parent-link a {
+    display: inline;
+}
+
+.slicknav_menu {
+    *zoom: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: auto;
+    z-index: 1039;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: rgba(243, 230, 203, 0.9);
+    box-shadow: 0 5px 5px 0 rgba(68,68,68,0.6);
+}
+
+.slicknav_nav, .slicknav_nav ul {
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+}
+
+.slicknav_menu .slicknav_icon-bar {
+    background-color: #fff;
+}
+
+.slicknav_btn {
+    margin: 5px 5px 6px;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(255,255,255,.75);
+    background-color: #222;
+}
+
+.slicknav_nav {
+    clear: both;
+    color: #a33033;
+    margin: 0;
+    font-size: 1em;
+}
+
+    .slicknav_nav ul {
+        margin: 0 0 0 5px;
+    }
+
+    .slicknav_nav .slicknav_row, .slicknav_nav a {
+        padding: 5px 10px;
+        margin: 0px 10px 0px 5px;
+        font-size: 2.5em;
+        border-top: #e8ddc8 2px solid;
+        text-transform: uppercase;
+    }
+
+        .slicknav_nav .slicknav_row:hover {
+            background: #ccc;
+            color: #231f20;
+        }
+
+    .slicknav_nav a {
+        text-decoration: none;
+        color: #a33033;
+    }
+
+        .slicknav_nav a:hover {
+            background: #e8ddc8;
+            color: #231f20;
+        }
+
+    .slicknav_nav .slicknav_txtnode {
+        margin-left: 15px;
+    }
+
+    .slicknav_nav .slicknav_item a, .slicknav_nav .slicknav_parent-link a {
+        padding: 0;
+        margin: 0;
+    }
+
+.slicknav_brand {
+    float: left;
+    color: #fff;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 7px 12px;
+    height: 44px;
+}
+/*#endregion*/
+
+
+/* #region Homepage CSS
+ * --------------------------------------- */
+.bgImage {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: auto;
+    position: relative;
+}
+
+
+#bgImage {
+    background: url(../images/S7/BGmain.jpg);
+    z-index: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    z-index: 1;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.parallax {
+    height: auto;
+    position: relative;
+    background-attachment: fixed;
+}
+
+#SeizeIntro {
+    background-color: transparent;
+    margin: 0 auto;
+    width: 100%;
+    padding: 100px 0 50px 0;
+    z-index: 1;
+}
+
+#detailPromotions {
+    background-color: transparent;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0px 0 150px 0;
+    z-index: 1;
+}
+
+#territoryCarousel {
+    background-color: transparent;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    padding: 150px 0 150px 0;
+    z-index: 1;
+}
+
+#ambassadorCarousel {
+    background-color: transparent;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0px 0 200px 0;
+    z-index: 1;
+}
+
+#TheValley {
+    background: transparent;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 0 50px 0;
+    z-index: 1;
+}
+
+/*#region SEIZE INTRO*/
+
+section.mainLogo {
+    text-align: center;
+}
+
+    section.mainLogo > img {
+        width: 100%;
+        max-width: 75%;
+    }
+
+/*#endregion*/
+
+/*#region A/B Promotions*/
+section.promoContainer {
+    text-align: center;
+    padding-top: 1%;
+}
+
+div.mainPromotions {
+    display: inline-block;
+}
+
+div.mainPromotions {
+    border: 5px solid #fff;
+    padding: .5%;
+    max-width: 700px;
+    text-transform: uppercase;
+    box-shadow: 1px 1px 1px #666666;
+    color: #fff;
+    text-shadow: 1px 1px #666666;
+    -webkit-animation-duration: 4s;
+    -moz-animation-delay: 2s;
+    -webkit-animation-iteration-count: infinite;
+}
+
+    div.mainPromotions table tbody tr td {
+        vertical-align: middle;
+        font-size: 35px;
+        line-height: 35px;
+        padding-right: 3px;
+        -webkit-transition: all ease-in-out .5s;
+        -moz-transition: all ease-in-out .5s;
+        -o-transition: all ease-in-out .5s;
+        transition: all ease-in-out .5s;
+    }
+
+        div.mainPromotions table tbody tr td:last-child {
+            padding: 0px;
+        }
+
+    div.mainPromotions a {
+        color: #fff;
+        text-decoration: none !important;
+    }
+
+    div.mainPromotions .promoH2 {
+        font-family: "Tungsten";
+        font-style: normal;
+        font-weight: 700;
+        color: #fff;
+        font-size: 85px;
+    }
+
+    div.mainPromotions .subH2 {
+        color: #fff;
+        font-family: "Tungsten";
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px;
+        font-size: 29px;
+    }
+
+    div.mainPromotions .promoCall {
+        color: #a33033;
+        border-top: 2px solid #a33033;
+        font-weight: 700;
+        line-height: 26px;
+        font-size: 30px;
+        letter-spacing: .1em;
+        border-bottom: 2px solid #a33033;
+        height: 27px;
+        display: inline-block;
+        text-shadow: none;
+    }
+
+    div.mainPromotions a:hover td {
+        color: #a33033;
+        text-shadow: none;
+        -webkit-transition: all ease-in-out .5s;
+        -moz-transition: all ease-in-out .5s;
+        -o-transition: all ease-in-out .5s;
+        transition: all ease-in-out .5s;
+    }
+
+/*#endregion*/
+
+/*#region Await Section*/
+section.awaitContainer {
+    margin: 4% 0 0% 0;
+    text-align: center;
+}
+
+    section.awaitContainer div.awaitImg {
+    }
+
+        section.awaitContainer div.awaitImg img {
+            width: 100%;
+            max-width: 400px;
+        }
+
+    section.awaitContainer div.awaitArrow {
+    }
+
+div.awaitArrow {
+    clear: both;
+    text-align: center;
+}
+
+    div.awaitArrow > a {
+        background: url(../images/S7/arrowHoverBtm.png) no-repeat;
+        width: 71px;
+        height: 71px;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+        div.awaitArrow > a:hover {
+            background-position: 0px -71px;
+        }
+
+div.tinyArrow {
+    clear: both;
+    text-align: center;
+}
+
+    div.tinyArrow > a {
+        background: url(../images/S7/arrowHoverBtm.png) no-repeat;
+        width: 71px;
+        height: 71px;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+        div.tinyArrow > a:hover {
+            background-position: 0px -71px;
+        }
+
+/*#endregion*/
+
+/*#region Detail Promotions*/
+
+section.seizeDetails {
+    display: inline-block;
+    width: 100%;
+}
+
+    section.seizeDetails a {
+        float: left;
+        width: 25%;
+        height: auto;
+    }
+
+        section.seizeDetails a:nth-child(2n+1) {
+            position: relative;
+            bottom: 10px;
+        }
+
+        section.seizeDetails a:nth-child(2n+2) {
+            position: relative;
+            top: 10px;
+        }
+
+        section.seizeDetails a:hover {
+            -webkit-box-shadow: 0 0 20px #98002e;
+            -moz-box-shadow: 0 0 20px #98002e;
+            box-shadow: 0 0 20px #98002e;
+            transition: box-shadow .3s ease-in-out;
+            z-index: 5;
+        }
+
+    section.seizeDetails div.detailBox .detailImg {
+        width: 100%;
+        max-width: 100%;
+        float: left;
+    }
+
+/*#endregion*/
+
+/*#region 7 Territory Carousel */
+
+section.territoryContainer {
+}
+
+section.welcomeLogo {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 60%;
+    padding-bottom: .5%;
+}
+
+section.territoryStrip {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 600px;
+    width: 100%;
+    padding: 1% 0 3% 0;
+    display: inline-block;
+}
+
+    section.territoryStrip div.logoContainer {
+        float: left;
+        width: 14.2%;
+    }
+
+section.modal-TerritoryLinks section.territoryStrip div.logoContainer {
+    width: 12.5%;
+}
+
+section.territoryStrip div.logoContainer a.terrClick {
+    display: inline-block;
+    width: 81px;
+    height: 71px;
+    cursor: pointer;
+    background-position: left top;
+}
+
+    section.territoryStrip div.logoContainer a.terrClick:hover {
+        background-position: 0 -71px;
+    }
+
+    section.territoryStrip div.logoContainer a.terrClick.activeTerr {
+        background-position: 0 -71px;
+        cursor: default;
+    }
+
+
+
+a.terrClick.wp {
+    background: url(../images/S7/wp.png) no-repeat;
+}
+
+a.terrClick.vr {
+    background: url(../images/S7/vr.png) no-repeat;
+}
+
+a.terrClick.pb {
+    background: url(../images/S7/pb.png) no-repeat;
+}
+
+a.terrClick.tp {
+    background: url(../images/S7/tp.png) no-repeat;
+}
+
+a.terrClick.mj {
+    background: url(../images/S7/mj.png) no-repeat;
+}
+
+a.terrClick.ew {
+    background: url(../images/S7/ew.png) no-repeat;
+}
+
+a.terrClick.tc {
+    background: url(../images/S7/tc.png) no-repeat;
+}
+
+a.terrClick.tv {
+    background: url(../images/S7/tv.png) no-repeat;
+}
+
+div#territory-carousel.sky-carousel .sky-carousel-container li img.terrSmall {
+    display: none;
+}
+
+div#territorySpacer {
+    height: 1px;
+}
+
+/*#endregion*/
+
+/*#region Ambassador Carousel */
+
+section.ambassadorContainer {
+}
+
+section.ambImage {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 40%;
+}
+
+
+div#ambassador-carousel .sc-content {
+    text-align: center;
+}
+
+div#ambassador-carousel div.sc-content-wrapper {
+    width: 100%;
+    top: 84%;
+    left: 50%;
+}
+
+div#ambassador-carousel a.ambBtn {
+    font-family: "Whitney";
+    font-style: italic;
+    font-weight: 700;
+    font-size: 21px;
+    background-color: #a93439;
+    color: #eee7d9;
+    padding: 0.5% 2%;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-transition: all ease-in-out .5s;
+    -moz-transition: all ease-in-out .5s;
+    -o-transition: all ease-in-out .5s;
+    transition: all ease-in-out .5s;
+}
+
+    div#ambassador-carousel a.ambBtn:hover {
+        color: #e4d7c4;
+        background-color: #fff;
+        text-decoration: none;
+    }
+
+
+
+
+/*#endregion*/
+
+/*#region THE VALLEY */
+
+section.valleyImg {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 40%;
+    padding-bottom: 3%;
+}
+
+section.valleyLearn {
+    padding: 2.5% 0;
+    text-align: center;
+}
+
+
+    section.valleyLearn div {
+        display: inline-block;
+        padding: 0% 1%;
+        border: #fff solid 7px;
+    }
+
+        section.valleyLearn div a {
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 3em;
+            color: #fff;
+            -webkit-transition: all ease-in-out .5s;
+            -moz-transition: all ease-in-out .5s;
+            -o-transition: all ease-in-out .5s;
+            transition: all ease-in-out .5s;
+        }
+
+            section.valleyLearn div a:hover {
+                color: #a33033;
+            }
+
+
+/*#endregion*/
+
+/*#endregion*/
+
+
+/* #region SKY PINWHEEL CAROUSEL
+ * --------------------------------------- */
+
+/*#region Carousel*/
+
+h2.Seizeh2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+/*#endregion*/
+
+
+/*#region TERRITORY Carousel*/
+
+section.territoryContainer {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+
+div#territory-carousel.sky-carousel {
+    max-width: 800px;
+    width: 100%;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+    div#territory-carousel.sky-carousel .sky-carousel-container li img {
+        display: block;
+        border: 0;
+        width: 600px;
+        max-width: none !important;
+    }
+
+div#territory-carousel .sc-content {
+    text-align: center;
+}
+
+div#territory-carousel div.sc-content-wrapper {
+    width: 100%;
+    top: 85%;
+}
+
+div#territory-carousel a.territoryBtn {
+    font-family: "Whitney";
+    font-style: italic;
+    font-weight: 700;
+    font-size: 23px;
+    background-color: #a93439;
+    color: #eee7d9;
+    padding: 3% 1% 1% 0.5%;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-transition: all ease-in-out .5s;
+    -moz-transition: all ease-in-out .5s;
+    -o-transition: all ease-in-out .5s;
+    transition: all ease-in-out .5s;
+}
+
+    div#territory-carousel a.territoryBtn:hover {
+        color: #e4d7c4;
+        background-color: #fff;
+        text-decoration: none;
+    }
+
+
+/*#endregion*/
+
+
+/*#region AMBASSADOR CAROUSEL*/
+
+section.ambassadorContainer {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+div#ambassador-carousel.sky-carousel {
+    max-width: 960px;
+    width: 100%;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+    div#ambassador-carousel.sky-carousel div.sky-carousel-wrapper {
+    }
+
+
+    div#ambassador-carousel.sky-carousel .sky-carousel-container li img {
+        display: block;
+        border: 0;
+        width: 381px;
+        max-width: none !important;
+    }
+
+
+    div#ambassador-carousel.sky-carousel .sc-nav-button {
+        top: 43.7%;
+    }
+
+        div#ambassador-carousel.sky-carousel .sc-nav-button.sc-next {
+            right: 1%;
+        }
+
+        div#ambassador-carousel.sky-carousel .sc-nav-button.sc-prev {
+            left: 1%;
+        }
+
+
+/*#endregion*/
+
+
+/**
+*	Table of Contents
+*	
+*	1. Media Queries
+*	2. Container Styles
+*	3. Carousel Item Styles
+*	4. Current Content Styles
+*	5. Gradient Overlay Styles
+*	6. Navigation Styles
+*	7. Preloader Styles
+*	8. Other Styles
+*/
+
+/**********************************************
+*
+* 1. Media Queries
+*
+**********************************************/
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .sky-carousel .sc-overlay {
+        width: 160px !important;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .sky-carousel .sc-overlay {
+        width: 70px !important;
+    }
+}
+
+/**********************************************
+*
+* 2. Container Styles
+*
+**********************************************/
+.js .sky-carousel {
+    visibility: hidden;
+}
+
+.sky-carousel .sky-carousel-container {
+    position: relative;
+    list-style-type: none;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+    /**********************************************
+*
+* 3. Carousel Item Styles
+*
+**********************************************/
+    .sky-carousel .sky-carousel-container li {
+        position: absolute;
+        border: 0;
+    }
+
+        .sky-carousel .sky-carousel-container li img {
+            display: block;
+            border: 0;
+            max-width: none !important;
+        }
+
+        .sky-carousel .sky-carousel-container li a img {
+            border: none;
+        }
+
+    .sky-carousel .sky-carousel-container .sc-content {
+        display: none;
+    }
+
+/**********************************************
+*
+* 4. Current Content Styles
+*
+**********************************************/
+.sky-carousel .sc-content-wrapper {
+    position: absolute;
+    text-align: center;
+    width: 70%;
+    top: 63%;
+    left: 27%;
+    z-index: 4999;
+}
+
+.sky-carousel .sc-content-container {
+    position: relative;
+    left: -50%;
+}
+
+.sky-carousel .sc-content-wrapper h2 {
+    color: #444;
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+.sky-carousel .sc-content-wrapper p {
+    color: #777;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+/**********************************************
+*
+* 5. Gradient Overlay Styles
+*
+**********************************************/
+.sky-carousel .sc-overlay {
+    display: none;
+    height: 100%;
+    z-index: 4998;
+    pointer-events: none;
+    top: 0;
+}
+
+.sky-carousel .sc-overlay-left {
+    left: -0.1px;
+}
+
+.sky-carousel .sc-overlay-right {
+    right: -0.1px;
+}
+
+/**********************************************
+*
+* 6. Navigation Styles
+*
+**********************************************/
+.sky-carousel .sc-nav-button {
+    position: absolute;
+    top: 40%;
+    z-index: 5000;
+    transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+}
+
+    .sky-carousel .sc-nav-button.sc-next {
+        background: url(../images/S7/arrowHoverHoriz.png) no-repeat;
+        width: 71px;
+        height: 71px;
+        cursor: pointer;
+        right: .5%;
+        background-position: left top;
+    }
+
+        .sky-carousel .sc-nav-button.sc-next:hover {
+            background-position: right top;
+        }
+
+    .sky-carousel .sc-nav-button.sc-prev {
+        background: url(../images/S7/arrowHoverHoriz.png) no-repeat;
+        width: 71px;
+        height: 71px;
+        cursor: pointer;
+        left: .5%;
+        background-position: left top;
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+    }
+
+        .sky-carousel .sc-nav-button.sc-prev:hover {
+            background-position: right top;
+        }
+
+/**********************************************
+*
+* 7. Preloader Styles
+*
+**********************************************/
+.sky-carousel .sc-preloader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    margin-top: -22px;
+    margin-left: -22px;
+    background: #f5f5f5 url("../images/sc-graphics/preloader.gif") no-repeat 50% 50%;
+    padding: 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+/**********************************************
+*
+* 8. Other Styles
+*
+**********************************************/
+.sc-no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/*#endregion*/
+
+
+/* #region MODAL POP-UPS
+ * --------------------------------------- */
+
+/*#region Modal Body*/
+
+.modal {
+    overflow-y: scroll;
+    background: transparent;
+    width: 100%;
+    border: 0px;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+    .modal.fade {
+        display: none;
+        -moz-transition: left 1s ease, width 1s ease-out 1s, border-width 1s ease-out 1s;
+        -webkit-transition: left 1s ease, width 1s ease-out 1s, border-width 1s ease-out 1s;
+    }
+
+h4.modal-title {
+    font-size: 2em;
+}
+
+.close {
+    font-weight: 100;
+    line-height: 30px;
+}
+
+.modal {
+}
+
+    .modal.fade.in {
+        top: 0%;
+    }
+
+div.modal-dialog {
+    padding: 10% 0;
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+div.modal-content {
+    background: url(../images/S7/modalBG.jpg);
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    font-family: "Whitney";
+    font-style: normal;
+    font-weight: 400;
+    z-index: 1051;
+}
+
+.modal-header > button {
+    padding: 0;
+    -webkit-transition: all ease-in-out .5s;
+    -moz-transition: all ease-in-out .5s;
+    -o-transition: all ease-in-out .5s;
+    transition: all ease-in-out .5s;
+}
+
+    .modal-header > button:hover, .modal-header > button:focus {
+        background: #a33033;
+        text-decoration: none;
+        outline: none;
+    }
+
+.modal-header .close {
+    position: absolute;
+    top: 0px;
+    right: 1px;
+    color: #fff;
+    opacity: 1;
+    float: none;
+    font-family: "Whitney";
+    margin-top: 0px;
+    font-size: 55px;
+}
+
+    .modal-header .close span {
+        display: block;
+        padding: 15%;
+        position: relative;
+        top: -2px;
+    }
+
+.modal-header {
+    border: 0px;
+    padding: 0;
+    position: absolute;
+}
+
+
+/*#endregion*/
+
+/*#region Modal Video*/
+
+section.modalVideo {
+    padding: 4% 4% 0% 4%;
+}
+
+    section.modalVideo a {
+        position: relative;
+        display: block;
+    }
+
+        section.modalVideo a span.playBtn {
+            background: url(../images/S7/playBtn.png) no-repeat;
+            width: 134px;
+            height: 92.5px;
+            cursor: pointer;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            top: 45%;
+        }
+
+        section.modalVideo a:hover span.playBtn {
+            background-position: 0px -92.5px;
+        }
+
+/*#endregion*/
+
+/*#region Modal Arrow */
+div.modalArrow {
+    text-align: center;
+}
+
+    div.modalArrow > a {
+        background: url(../images/S7/arrowSmallBtm.png) no-repeat;
+        width: 35px;
+        height: 36px;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+        div.modalArrow > a:hover {
+            background-position: 0px -36px;
+        }
+/*#endregion*/
+
+/*#region Modal Ambassador*/
+
+div.modal-body table.modalAmbassador {
+    clear: both;
+    width: 92%;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+    div.modal-body table.modalAmbassador tr {
+        width: 100%;
+        height: auto;
+        vertical-align: top;
+        display: block;
+        border-collapse: collapse;
+    }
+
+
+/*Amb Photo*/
+td.ambassadorPhoto {
+    width: 40%;
+    vertical-align: middle;
+}
+
+    td.ambassadorPhoto img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+/*Amb Copy*/
+td.ambassadorCopy {
+    line-height: 24px;
+    width: 60%;
+    padding: 6% 3% 0% 3%;
+    vertical-align: top;
+}
+
+h6.modalH6 {
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: .1%;
+    font-weight: bold;
+    font-size: 15px;
+    font-style: italic;
+    border-bottom: #fff 1px solid;
+}
+
+div.ambassadorTitle {
+    font-family: 'dukefill';
+    padding: 3% 0 3% 0;
+}
+
+    div.ambassadorTitle h5 {
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 54px;
+        line-height: 47px;
+    }
+
+    div.ambassadorTitle span {
+        color: #fff;
+        font-size: 20px;
+        display: inline-block;
+        padding-left: 7%;
+    }
+
+.modal-body p {
+    color: #414042;
+    font-size: 17px;
+}
+
+td.ambassadorCopy div.ambassadorLearn {
+    display: inline-block;
+    padding: 3px 9px;
+    display: inline-block;
+    margin-top: 5%;
+    -webkit-transition: all ease-in-out .5s;
+    -moz-transition: all ease-in-out .5s;
+    -o-transition: all ease-in-out .5s;
+    transition: all ease-in-out .5s;
+}
+
+    td.ambassadorCopy div.ambassadorLearn a {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #fff;
+        font-size: 22px;
+        font-style: italic;
+        font-weight: 700;
+    }
+
+
+/*#endregion*/
+
+/*#region Territory Expose*/
+section.terrExpose {
+    margin-bottom: 5%;
+}
+
+td.ambassadorExpose {
+    width: 70%;
+    line-height: 24px;
+    padding: 3% 3% 0% 3%;
+    vertical-align: top;
+}
+
+    td.ambassadorExpose span.socialImages {
+        margin-left: 2%;
+        display: inline-block;
+    }
+
+        td.ambassadorExpose span.socialImages a {
+            width: 25%;
+            display: inline-block;
+            -webkit-transition: all 0.3s linear;
+            -o-transition: all 0.3s linear;
+            transition: all 0.3s linear;
+            display: none;
+        }
+
+            td.ambassadorExpose span.socialImages a:hover {
+                text-decoration: none;
+                -webkit-filter: drop-shadow(0px 0px 8px rgba(0, 231, 255, 0.8));
+            }
+
+        td.ambassadorExpose span.socialImages img {
+        }
+
+    td.ambassadorExpose div.ambassadorTitle span {
+        padding-left: 1.5%;
+    }
+
+td.ambassadorExpose {
+    font-size: 17px;
+}
+
+td.ambassador_Expose_Photos {
+    width: 30%;
+    vertical-align: bottom;
+    padding-right: 3%;
+}
+
+
+    td.ambassador_Expose_Photos img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+/*#endregion*/
+
+/*#region Territory Modal Deals*/
+
+section.modalDeals {
+    clear: both;
+    width: 90%;
+    margin: 0 auto;
+    border-top: solid 3px #001c71;
+}
+
+    section.modalDeals section.modalDeal_Container {
+        padding: 5% 0;
+    }
+
+        section.modalDeals section.modalDeal_Container div.carouselDeal {
+            text-align: center;
+        }
+
+            section.modalDeals section.modalDeal_Container div.carouselDeal img {
+                width: 100%;
+                max-width: 100%;
+            }
+
+.carousel-indicators li {
+    display: block;
+    float: left;
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+    text-indent: -999px;
+    border: solid 2px #fff;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.carousel-indicators .active {
+    background-color: #fff;
+}
+
+div a > div.dealLink {
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+div a > div.dealLink {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    margin: 0 auto;
+    z-index: 5;
+    text-transform: uppercase;
+    font-family: "Tungsten";
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    top: 50%;
+    margin-top: -53px;
+}
+
+
+    div a > div.dealLink > span {
+        text-align: center;
+        padding: 1% 12%;
+        display: inline-block;
+        border: 6px solid #fff;
+        font-size: 37px;
+        -webkit-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+        transition: all 0.3s linear;
+    }
+
+        div a > div.dealLink > span:hover {
+            text-decoration: none;
+            border: 6px solid #a33033;
+            color: #a33033;
+        }
+
+/*#endregion*/
+
+/*#region Modal Territory Logos & Buttons */
+section.modal-TerritoryLinks {
+    padding-bottom: 5%;
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+    section.modal-TerritoryLinks section.territoryStrip {
+        position: relative;
+        padding-top: 0;
+        display: inline-block;
+        left: 0;
+        transform: initial;
+    }
+
+
+    section.modal-TerritoryLinks section.modal_SevenTerritories {
+        width: 600px;
+        padding-top: 2%;
+        margin: 0 auto;
+        padding-bottom: 3%;
+    }
+
+section.modal_TerritoryBtns {
+    display: inline-block;
+    width: 100%;
+    max-width: 452px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+    section.modal_TerritoryBtns div {
+        float: left;
+        float: left;
+        width: 100%;
+        max-width: 216px;
+        margin: 0 auto;
+        text-align: center;
+        display: inline-block;
+    }
+
+        section.modal_TerritoryBtns div:first-child {
+            margin-right: 3%;
+        }
+
+        section.modal_TerritoryBtns div a {
+            -webkit-transition: all 0.3s linear;
+            -o-transition: all 0.3s linear;
+            transition: all 0.3s linear;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 21px;
+            padding: 3% 6%;
+        }
+
+            section.modal_TerritoryBtns div a:hover {
+                text-decoration: none;
+            }
+
+section.territoryStrip div.logoContainer a.terrClick.activeModal {
+    background-position: 0 -71px;
+    cursor: default;
+}
+
+/*#endregion*/
+
+/*#region UGC Modal*/
+
+section.territoryUGC {
+}
+
+section.territoryUGC {
+    margin: 0 auto;
+    width: 95%;
+    display: none;
+}
+
+iframe.snapwidget-widget {
+    width: 100%;
+    height: 275px;
+    display: none;
+}
+
+section.territoryUGC div.UGC_Copy h6 {
+    font-family: "Whitney";
+    text-transform: uppercase;
+    font-size: 1.4em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+    section.territoryUGC div.UGC_Copy h6:first-child {
+        float: left;
+        padding: 1% 0 0 2%;
+    }
+
+    section.territoryUGC div.UGC_Copy h6:last-child {
+        float: right;
+        padding: .5% 1% 0 0;
+    }
+
+
+/*#endregion*/
+
+/*#region Bottom Logo*/
+section.modal_BottomLogo {
+    padding: 4% 0;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 346px;
+}
+
+img.modalBtm {
+    width: 100%;
+    max-width: 100%;
+}
+/*#endregion*/
+
+/* #region MODAL/TERRITORY SPECIFIC
+ * --------------------------------------- */
+
+/*#region WINTER PARK TERRITORY*/
+
+div#winterPark .modal-header > button {
+    background: #a93439;
+}
+
+    div#winterPark .modal-header > button:hover {
+        background: #231f20;
+    }
+
+div#winterPark td.ambassadorCopy div.ambassadorLearn {
+    background-color: #a93439;
+}
+
+    div#winterPark td.ambassadorCopy div.ambassadorLearn:hover {
+        background-color: #231f20;
+    }
+
+div#winterPark section.modalDeals {
+    border-top: solid 3px #8b2332;
+}
+
+div#winterPark div.ambassadorTitle h5 {
+    color: #8b2332;
+}
+
+div#winterPark section.modal_TerritoryBtns div a {
+    background: #a93439;
+}
+
+    div#winterPark section.modal_TerritoryBtns div a:hover {
+        background-color: #231f20;
+    }
+
+
+div#winterPark section.territoryUGC {
+    background-color: #8b2332;
+}
+
+    div#winterPark section.territoryUGC div.UGC_Copy h6 {
+        color: #eee7d9;
+    }
+
+/*#endregion*/
+
+/*#region VASQUEZ RIDGE TERRITORY*/
+div#vasquezRidge .modal-header > button {
+    background: #ffb547;
+}
+
+    div#vasquezRidge .modal-header > button:hover {
+        color: #fff;
+        background: #a33033;
+    }
+
+div#vasquezRidge td.ambassadorCopy div.ambassadorLearn {
+    color: #2e2a25;
+    background-color: #ffb547;
+}
+
+    div#vasquezRidge td.ambassadorCopy div.ambassadorLearn a {
+        color: #2e2a25;
+    }
+
+        div#vasquezRidge td.ambassadorCopy div.ambassadorLearn a:hover {
+            color: #fff;
+        }
+
+    div#vasquezRidge td.ambassadorCopy div.ambassadorLearn:hover {
+        background-color: #a33033;
+    }
+
+div#vasquezRidge section.modalDeals {
+    border-top: solid 3px #c17841;
+}
+
+div#vasquezRidge div.ambassadorTitle h5 {
+    color: #c17841;
+}
+
+div#vasquezRidge section.modal_TerritoryBtns div a {
+    color: #2e2a25;
+    background: #ffb547;
+}
+
+    div#vasquezRidge section.modal_TerritoryBtns div a:hover {
+        color: #fff;
+        background-color: #a33033;
+    }
+
+
+div#vasquezRidge section.territoryUGC {
+    background-color: #ffb547;
+    background: rgba(255,181,71,.9);
+}
+
+    div#vasquezRidge section.territoryUGC div.UGC_Copy h6 {
+        color: #2e2a25;
+    }
+/*#endregion*/
+
+/*#region PARSENN BOWL TERRITORY*/
+div#parsennBowl .modal-header > button {
+    background: #53a1a5;
+}
+
+    div#parsennBowl .modal-header > button:hover {
+        color: #eee7d9;
+        background: #a33033;
+    }
+
+div#parsennBowl td.ambassadorCopy div.ambassadorLearn {
+    color: #eee7d9;
+    background-color: #53a1a5;
+}
+
+    div#parsennBowl td.ambassadorCopy div.ambassadorLearn a {
+        color: #eee7d9;
+    }
+
+    div#parsennBowl td.ambassadorCopy div.ambassadorLearn:hover {
+        background-color: #a33033;
+    }
+
+div#parsennBowl section.modalDeals {
+    border-top: solid 3px #0a5d66;
+}
+
+div#parsennBowl div.ambassadorTitle h5 {
+    color: #0a5d66;
+}
+
+div#parsennBowl section.modal_TerritoryBtns div a {
+    color: #eee7d9;
+    background: #53a1a5;
+}
+
+    div#parsennBowl section.modal_TerritoryBtns div a:hover {
+        background-color: #a33033;
+    }
+
+
+div#parsennBowl section.territoryUGC {
+    background-color: #0a5d66;
+    background: rgba(10,93,102,.9);
+}
+
+    div#parsennBowl section.territoryUGC div.UGC_Copy h6 {
+        color: #eee7d9;
+    }
+/*#endregion*/
+
+/*#region TERRAIN PARK TERRITORY*/
+div#terrainPark .modal-header > button {
+    background: #8dc63f;
+}
+
+    div#terrainPark .modal-header > button:hover {
+        color: #fff;
+        background: #a33033;
+    }
+
+div#terrainPark td.ambassadorCopy div.ambassadorLearn {
+    color: #8dc63f;
+    background-color: #231f20;
+}
+
+    div#terrainPark td.ambassadorCopy div.ambassadorLearn a {
+        color: #8dc63f;
+    }
+
+        div#terrainPark td.ambassadorCopy div.ambassadorLearn a:hover {
+            color: #fff;
+        }
+
+    div#terrainPark td.ambassadorCopy div.ambassadorLearn:hover {
+        background-color: #a33033;
+    }
+
+div#terrainPark section.modalDeals {
+    border-top: solid 3px #231f20;
+}
+
+div#terrainPark div.ambassadorTitle h5 {
+    color: #231f20;
+}
+
+div#terrainPark section.modal_TerritoryBtns div a {
+    color: #add136;
+    background: #231f20;
+}
+
+    div#terrainPark section.modal_TerritoryBtns div a:hover {
+        color: #fff;
+        background-color: #a33033;
+    }
+
+
+div#terrainPark section.territoryUGC {
+    background-color: #231f20;
+    background: rgba(35,31,32,.9);
+}
+
+    div#terrainPark section.territoryUGC div.UGC_Copy h6 {
+        color: #eee7d9;
+    }
+/*#endregion*/
+
+/*#region MARY JANE TERRITORY*/
+div#maryJane .modal-header > button {
+    background: #259dd3;
+}
+
+    div#maryJane .modal-header > button:hover {
+        background: #a33033;
+    }
+
+div#maryJane td.ambassadorCopy div.ambassadorLearn {
+    background-color: #3a528e;
+}
+
+    div#maryJane td.ambassadorCopy div.ambassadorLearn:hover {
+        background-color: #a33033;
+    }
+
+div#maryJane div.ambassadorTitle h5 {
+    color: #001c71;
+}
+
+div#maryJane section.modal_TerritoryBtns div a {
+    background: #3a528e;
+}
+
+    div#maryJane section.modal_TerritoryBtns div a:hover {
+        background-color: #a33033;
+    }
+
+
+div#maryJane section.territoryUGC {
+    background-color: #001c71;
+    background: rgba(0,28,113,.9);
+}
+
+    div#maryJane section.territoryUGC div.UGC_Copy h6 {
+        color: #eee7d9;
+    }
+
+/*#endregion*/
+
+/*#region EAGLE WIND TERRITORY*/
+div#eagleWind .modal-header > button {
+    background: #259dd3;
+}
+
+    div#eagleWind .modal-header > button:hover {
+        color: #fff;
+        background: #a33033;
+    }
+
+div#eagleWind td.ambassadorCopy div.ambassadorLearn {
+    color: #fff;
+    background-color: #e2231a;
+}
+
+    div#eagleWind td.ambassadorCopy div.ambassadorLearn a {
+        color: #fff;
+    }
+
+        div#eagleWind td.ambassadorCopy div.ambassadorLearn a:hover {
+            color: #fff;
+        }
+
+    div#eagleWind td.ambassadorCopy div.ambassadorLearn:hover {
+        background-color: #231f20;
+    }
+
+div#eagleWind section.modalDeals {
+    border-top: solid 3px #e2231a;
+}
+
+div#eagleWind div.ambassadorTitle h5 {
+    color: #90292a;
+}
+
+div#eagleWind section.modal_TerritoryBtns div a {
+    color: #fff;
+    background: #e2231a;
+}
+
+    div#eagleWind section.modal_TerritoryBtns div a:hover {
+        color: #fff;
+        background-color: #231f20;
+    }
+
+
+div#eagleWind section.territoryUGC {
+    background-color: #e2231a;
+    background: rgba(226,35,26,.9);
+}
+
+    div#eagleWind section.territoryUGC div.UGC_Copy h6 {
+        color: #f9e0a4;
+    }
+/*#endregion*/
+
+/*#region THE CIRQUE TERRITORY*/
+div#theCirque .modal-header > button {
+    background: #ffce00;
+}
+
+    div#theCirque .modal-header > button:hover {
+        color: #fff;
+        background: #a33033;
+    }
+
+div#theCirque td.ambassadorCopy div.ambassadorLearn {
+    color: #ffce00;
+    background-color: #2e2a25;
+}
+
+    div#theCirque td.ambassadorCopy div.ambassadorLearn a {
+        color: #ffce00;
+    }
+
+        div#theCirque td.ambassadorCopy div.ambassadorLearn a:hover {
+            color: #fff;
+        }
+
+    div#theCirque td.ambassadorCopy div.ambassadorLearn:hover {
+        background-color: #a33033;
+    }
+
+div#theCirque section.modalDeals {
+    border-top: solid 3px #231f20;
+}
+
+div#theCirque div.ambassadorTitle h5 {
+    color: #2e2a25;
+}
+
+div#theCirque section.modal_TerritoryBtns div a {
+    color: #ffce00;
+    background: #2e2a25;
+}
+
+    div#theCirque section.modal_TerritoryBtns div a:hover {
+        color: #fff;
+        background-color: #a33033;
+    }
+
+
+div#theCirque section.territoryUGC {
+    background-color: #ffce00;
+    background: rgba(255,206,0,.9);
+}
+
+    div#theCirque section.territoryUGC div.UGC_Copy h6 {
+        color: #2e2a25;
+    }
+/*#endregion*/
+
+/*#region THE VALLEY TERRITORY*/
+div#theValley .modal-header > button {
+    background: #ffb547;
+}
+
+    div#theValley .modal-header > button:hover {
+        color: #fff;
+        background: #a33033;
+    }
+
+div#theValley td.ambassadorCopy div.ambassadorLearn {
+    color: #2e2a25;
+    background-color: #ffb547;
+    border-color: #ffb547;
+}
+
+    div#theValley td.ambassadorCopy div.ambassadorLearn a {
+        color: #2e2a25;
+    }
+
+        div#theValley td.ambassadorCopy div.ambassadorLearn a:hover {
+            color: #fff;
+        }
+
+    div#theValley td.ambassadorCopy div.ambassadorLearn:hover {
+        background-color: #a33033;
+    }
+
+div#theValley section.modalDeals {
+    border-top: solid 3px #c17841;
+}
+
+div#theValley div.ambassadorTitle h5 {
+    color: #c17841;
+}
+
+div#theValley section.modal_TerritoryBtns div a {
+    color: #2e2a25;
+    background: #ffb547;
+}
+
+    div#theValley section.modal_TerritoryBtns div a:hover {
+        color: #fff;
+        background-color: #a33033;
+    }
+
+
+div#theValley section.territoryUGC {
+    background-color: #ffb547;
+    background: rgba(255,181,71,.9);
+}
+
+    div#theValley section.territoryUGC div.UGC_Copy h6 {
+        color: #2e2a25;
+    }
+/*#endregion*/
+
+/*#region DEALS/PROMOTIONS MODAL */
+
+div#Promotions .modal-header > button {
+    background: #a93439;
+}
+
+    div#Promotions .modal-header > button:hover {
+        background: #231f20;
+    }
+/*#region Promotion Deals*/
+section.dealsContainer {
+    padding: 4% 4% 0% 4%;
+}
+
+section.Deal_Row {
+    width: 100%;
+    max-width: 938px;
+    height: auto;
+    clear: both;
+    display: inline-block;
+}
+
+    section.Deal_Row:not(:first-child) {
+        margin-top: 3%;
+    }
+
+    section.Deal_Row:last-child {
+        margin-bottom: 1%;
+    }
+
+    section.Deal_Row div.dealPromotion {
+        float: left;
+        position: relative;
+    }
+
+div.dealPromotion a {
+    display: block;
+}
+
+    div.dealPromotion a > div.promoLink {
+        color: #fff;
+        margin: 0 auto;
+        z-index: 5;
+        text-transform: uppercase;
+        font-family: "Tungsten";
+        font-style: normal;
+        font-weight: 700;
+        text-align: center;
+        position: absolute;
+        top: 52%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+
+        div.dealPromotion a > div.promoLink > span {
+            text-align: center;
+            padding: 1% 7%;
+            display: inline-block;
+            border: 6px solid #fff;
+            font-size: 36px;
+            -webkit-transition: all 0.3s linear;
+            -o-transition: all 0.3s linear;
+            transition: all 0.3s linear;
+        }
+
+            div.dealPromotion a > div.promoLink > span:hover {
+                text-decoration: none;
+                border: 6px solid #a33033;
+                color: #a33033;
+            }
+
+#promoRowOne div.dealPromotion:first-child {
+    width: 25%;
+    margin-right: 2%;
+}
+
+#promoRowOne div.dealPromotion:last-child {
+    width: 73%;
+    display: block;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), rgba(0,0,0,0.55) url(../images/S7/promoOne.jpg) no-repeat center;
+    background-size: cover;
+    margin: 0;
+    max-width: 684px;
+    height: 231px;
+}
+
+#promoRowTwo div.dealPromotion {
+    width: 100%;
+}
+
+#promoRowThree div.dealPromotion {
+    width: 100%;
+}
+
+#promoRowFour div.dealPromotion:first-child {
+    display: block;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), rgba(0,0,0,0.55) url(../images/S7/LodgingPromoFraser.jpg) no-repeat center;
+    background-size: cover;
+    margin: 0;
+    max-width: 459px;
+    height: 235px;
+    width: 49%;
+    margin-right: 2%;
+}
+
+#promoRowFour div.dealPromotion:last-child {
+    display: block;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), rgba(0,0,0,0.55) url(../images/S7/TrainPromo.jpg) no-repeat center;
+    background-size: cover;
+    margin: 0;
+    max-width: 459px;
+    height: 235px;
+    width: 49%;
+}
+
+#promoRowFive div.dealPromotion:first-child {
+    width: 73%;
+    display: block;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), rgba(0,0,0,0.55) url(../images/S7/PromoTickets.jpg) no-repeat center;
+    background-size: cover;
+    margin: 0;
+    max-width: 684px;
+    height: 231px;
+    margin-right: 2%;
+}
+
+#promoRowFive div.dealPromotion:last-child {
+    width: 25%;
+}
+
+
+/*#endregion*/
+/*#endregion*/
+
+
+/*#endregion*/
+
+/*#endregion*/
+
+
+/* #region FOOTER
+ * --------------------------------------- */
+footer.seizeFooter {
+    display: block;
+    text-align: center;
+    clear: both;
+    height: auto;
+    z-index: 1039;
+    width: 100%;
+    padding: 0.3% 0 0 0;
+    margin: 0;
+    background: rgba(35, 31, 32, 0.6);
+    box-shadow: 0 5px 5px 0 rgba(68,68,68,0.6);
+}
+
+    footer.seizeFooter > a {
+        display: inline-block;
+    }
+/*#endregion*/
+
+
+/* #region MEDIA QUERIES
+ * --------------------------------------- */
+
+/*#region DESKTOP*/
+@media screen and (max-width: 1600px) {
+    #SeizeIntro {
+    }
+
+    section.awaitContainer {
+        margin: 4% 0 0% 0;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    #menu ul li {
+        font-size: 3em;
+    }
+
+    /*Navigation*/
+    #menu li.heading-logo div.mainLogo {
+        max-width: 137px;
+    }
+
+    #menu li#navSpacer {
+        max-width: 137px;
+    }
+
+    #menu li.heading-logo {
+        left: 2.8%;
+    }
+
+    #menu ul li:not(:first-child) {
+        margin-left: 2.8%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    /*Navigation*/
+    #menu li.heading-logo {
+        left: 2.5%;
+    }
+
+    #menu ul li:not(:first-child) {
+        margin-left: 2.5%;
+    }
+
+
+    /*Modal*/
+    .modal-header .close {
+        position: relative;
+        top: -41px;
+        right: 0px;
+        z-index: 1050;
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    #menu ul li {
+        font-size: 2.5em;
+    }
+
+    #menu li.heading-logo div.mainLogo {
+        max-width: 120px;
+    }
+
+    #menu li#navSpacer {
+        max-width: 120px;
+    }
+}
+
+@media screen and (max-width: 1021px) {
+    section.welcomeLogo {
+        max-width: 90%;
+    }
+
+    section.ambImage {
+        max-width: 55%;
+    }
+
+    section.valleyImg {
+        max-width: 52%;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    #menu ul li:not(:first-child) {
+        margin-left: 2%;
+    }
+
+    #menu li.heading-logo {
+        left: 2%;
+    }
+
+    /*Modal Deals*/
+    div.dealPromotion a > div.promoLink > span {
+        padding: 1% 3%;
+        font-size: 31px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    /*Navigation*/
+    #menu li.heading-logo div.mainLogo {
+        max-width: 96px;
+    }
+
+    #menu li#navSpacer {
+        max-width: 80px;
+    }
+
+    #menu li.heading-logo {
+        left: 1%;
+    }
+
+    #menu ul li {
+        font-size: 2.2em;
+    }
+
+    /*Modal*/
+    div.modal-dialog {
+        max-width: 800px;
+    }
+
+    div.modal-body table.modalAmbassador {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    /*Navigation*/
+    #menu li.heading-logo {
+        left: 0%;
+    }
+
+    #menu ul li {
+        font-size: 2.2em;
+    }
+
+    #menu li.heading-logo div.mainLogo {
+        max-width: 100px;
+    }
+
+    #menu li#navSpacer {
+        max-width: 80px;
+    }
+
+    /*Seize Intro*/
+    #SeizeIntro {
+        padding: 50px 0 50px 0;
+    }
+
+    section.mainLogo > img {
+        max-width: 90%;
+    }
+
+    /*A/B Offers*/
+    div.mainPromotions div.dealpromo {
+        border: 5px solid #fff;
+    }
+
+    /*Await Container*/
+    section.awaitContainer div.awaitImg img {
+        max-width: 375px;
+    }
+
+    /*Territory Carousel*/
+    #territoryCarousel {
+        padding: 100px 0 200px 0;
+    }
+
+    /*The Valley*/
+    section.valleyLearn div {
+        border: #fff solid 5px;
+    }
+
+        section.valleyLearn div a {
+            font-size: 2.5em;
+        }
+
+        section.valleyLearn div:hover {
+            border: #a33033 solid 5px;
+        }
+
+    /*Modal*/
+    div.modal-dialog {
+        padding: 15% 0;
+        max-width: 700px;
+    }
+
+    td.ambassador_Expose_Photos {
+        display: none;
+    }
+
+    td.ambassadorExpose {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+
+    /*Navigation*/
+    #menu li.heading-logo div.mainLogo {
+        max-width: 77px;
+    }
+
+    #menu ul li {
+        font-size: 2em;
+    }
+
+    #menu li#navSpacer {
+        max-width: 77px;
+        margin-left: 0;
+    }
+
+    #menu li a {
+        border-top: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+    }
+
+    /*Background Image*/
+    #bgImage {
+        padding: 52px 0 0 0;
+    }
+
+    /*Seize Intro*/
+    #SeizeIntro {
+        padding: 0;
+    }
+
+    section.mainLogo > img {
+        max-width: 100%;
+    }
+
+    /*A/B Offers*/
+    section.promoContainer {
+        padding-top: 2%;
+    }
+
+    div.mainPromotions div.dealpromo {
+        font-size: 23px;
+        max-width: 330px;
+    }
+
+        div.mainPromotions div.dealpromo a span {
+            font-size: 32px;
+        }
+
+    /*Await Container*/
+    section.awaitContainer {
+        margin: 7% 0 3% 0;
+    }
+
+        section.awaitContainer div.awaitImg img {
+            max-width: 400px;
+        }
+
+    /*Detail Promotions*/
+    #detailPromotions {
+        padding: 50px 0 0px 0;
+    }
+
+    section.seizeDetails a {
+        width: 50%;
+    }
+
+        section.seizeDetails a:first-child {
+            float: right;
+        }
+
+        section.seizeDetails a:nth-child(2n+1) {
+            bottom: 0px;
+        }
+
+        section.seizeDetails a:nth-child(2n+2) {
+            top: 0px;
+        }
+
+    /*Territory Carousel*/
+    #territoryCarousel {
+        padding: 50px 0 150px 0;
+    }
+
+    div#territoryStart {
+        padding-top: 50px;
+    }
+
+    section.welcomeLogo {
+        max-width: 100%;
+        padding-bottom: 2%;
+    }
+
+    div#territory-carousel.sky-carousel {
+        max-width: 680px;
+    }
+
+
+    /*Ambassador Carousel*/
+    #ambassadorCarousel {
+        padding: 50px 0 100px 0;
+    }
+
+    section.ambImage {
+        width: 65%;
+        max-width: 100%;
+    }
+
+    /*The Valley*/
+    section.valleyImg {
+        width: 60%;
+        max-width: 100%;
+    }
+
+    #TheValley > section.seizeDetails a {
+        float: left;
+        width: 25%;
+        height: auto;
+    }
+
+        #TheValley > section.seizeDetails a:nth-child(2n+1) {
+            position: relative;
+            bottom: 10px;
+        }
+
+        #TheValley > section.seizeDetails a:nth-child(2n+2) {
+            position: relative;
+            top: 10px;
+        }
+
+    #TheValley > section.seizeDetails div.detailBox .detailImg {
+        width: 100%;
+    }
+
+    section.valleyLearn {
+        padding: 3% 0;
+    }
+
+        section.valleyLearn div a {
+            font-size: 2em;
+        }
+
+    /*Modal*/
+
+    div.active.item a > div.dealLink {
+        margin-top: -38px;
+    }
+
+        div.active.item a > div.dealLink > span {
+            font-size: 35px;
+            border: 5px solid #fff;
+            padding: 0% 11%;
+        }
+
+    section.modalVideo a span.playBtn {
+        top: 32%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #menu ul li:not(:first-child) {
+        margin-left: 2%;
+    }
+
+    #menu ul li {
+        font-size: 1.8em;
+    }
+
+    /*Modal*/
+    div.modal-dialog {
+        max-width: 600px;
+    }
+
+    .carousel-indicators {
+        top: 6px;
+        right: 6px;
+    }
+
+    section.modal-TerritoryLinks section.modal_SevenTerritories {
+        width: 550px;
+    }
+
+    /*Modal Deals*/
+    section.Deal_Row div.dealPromotion {
+        height: 137px !important;
+    }
+
+    div.dealPromotion a > div.promoLink > span {
+        font-size: 25px;
+        border: 2px solid #fff;
+    }
+
+    div.dealPromotion a > div.promoLink {
+        font-weight: 100;
+    }
+
+        div.dealPromotion a > div.promoLink > span:hover {
+            border: 2px solid #a33033;
+        }
+}
+/*#endregion*/
+
+/*#region AFTER SWITCH TO MOBILE*/
+
+@media screen and (max-width: 681px) {
+
+    /*Navigation*/
+    .slicknav_menu {
+        background: rgba(243, 230, 203, 1) !Important;
+    }
+
+    div.logoOff {
+        display: block;
+        position: fixed;
+        z-index: 1040;
+        width: 100%;
+        max-width: 30%;
+        top: 5px;
+        left: 15px;
+    }
+
+        div.logoOff a {
+            display: inline-block;
+        }
+
+    /*Await Container*/
+
+    section.awaitContainer div.awaitImg img {
+        max-width: 350px;
+    }
+
+    /*Ambassador Carousel*/
+    div#ambassador-carousel.sky-carousel .sc-nav-button.sc-next {
+        right: 10%;
+    }
+
+    div#ambassador-carousel.sky-carousel .sc-nav-button.sc-prev {
+        left: 10%;
+    }
+
+
+    /*Territory Carousel*/
+    #territoryCarousel {
+        padding: 0px 0 20px 0;
+    }
+
+    div#territory-carousel.sky-carousel {
+        height: 400px;
+    }
+
+    .sky-carousel .sc-nav-button {
+        top: 50%;
+    }
+
+    div#territory-carousel.sky-carousel .sky-carousel-container li img.terrLarge {
+        display: none;
+    }
+
+    div#territory-carousel.sky-carousel .sky-carousel-container li img.terrSmall {
+        display: block;
+    }
+
+    div#territory-carousel.sky-carousel .sky-carousel-container li img {
+        width: 279px;
+    }
+
+    div#territory-carousel div.sc-content-wrapper {
+        top: 80%;
+        left: 48%;
+    }
+
+    .sky-carousel .sc-nav-button {
+        top: 35%;
+    }
+
+        .sky-carousel .sc-nav-button.sc-next {
+            right: 11%;
+        }
+
+        .sky-carousel .sc-nav-button.sc-prev {
+            left: 10%;
+        }
+
+    section.territoryStrip {
+        display: none;
+    }
+
+
+    /*The Valley*/
+    #TheValley > section.seizeDetails a {
+        float: left;
+        width: 50%;
+        height: auto;
+    }
+
+        #TheValley > section.seizeDetails a:nth-child(2n+1) {
+            position: relative;
+            bottom: 0px;
+        }
+
+        #TheValley > section.seizeDetails a:nth-child(2n+2) {
+            position: relative;
+            top: 0px;
+        }
+
+    #TheValley > section.seizeDetails div.detailBox .detailImg {
+        width: 100%;
+    }
+
+    section.valleyLearn {
+        padding: 3% 0;
+    }
+
+        section.valleyLearn div a {
+            font-size: 2em;
+        }
+
+    /*Modal*/
+    div.active.item a > div.dealLink {
+        margin-top: -36px;
+    }
+
+        div.active.item a > div.dealLink > span {
+            font-size: 27px;
+            padding: 1% 9%;
+        }
+
+    section.modalDeals section.modalDeal_Container {
+        padding: 5% 0 0 0;
+    }
+
+    section.modal-TerritoryLinks div.logoContainer {
+        width: 12.2%;
+    }
+
+    section.modal-TerritoryLinks section.modal_SevenTerritories {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    /*Modal*/
+    div.modal-dialog {
+        max-width: 500px;
+    }
+
+    td.ambassadorPhoto {
+        display: none;
+    }
+
+    td.ambassadorCopy {
+        width: 100%;
+        padding: 6% 3% 6% 3%;
+    }
+
+    section.modal-TerritoryLinks section.territoryStrip div.logoContainer {
+        width: 25%;
+    }
+
+    section.modal-TerritoryLinks section.modal_SevenTerritories {
+        width: 430px;
+    }
+
+    div.active.item a > div.dealLink {
+        margin-top: -25px;
+    }
+
+        div.active.item a > div.dealLink > span {
+            font-size: 23px;
+        }
+
+    /*Modal Deals*/
+    section.Deal_Row div.dealPromotion {
+        height: 113px !important;
+    }
+
+    div.dealPromotion a > div.promoLink > span {
+        font-size: 23px;
+    }
+
+    div.dealPromotion a > div.promoLink {
+        font-weight: 100;
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+    /*Navigation*/
+    div.logoOff {
+        max-width: 37%;
+    }
+
+    .slicknav_nav a {
+        font-size: 2em;
+    }
+
+    /*Main Offer*/
+
+    div.mainPromotions {
+        padding: 1%;
+    }
+
+        div.mainPromotions .promoH2 {
+            font-size: 50px;
+        }
+
+        div.mainPromotions table tbody tr td {
+            font-size: 20px;
+            line-height: 19px;
+        }
+
+        div.mainPromotions .subH2 {
+            line-height: 19px;
+            font-size: 20px;
+        }
+
+        div.mainPromotions .promoCall {
+            color: #a33033;
+            border-top: 0px solid #a33033;
+            font-weight: 700;
+            line-height: 18px;
+            font-size: 24px;
+            letter-spacing: 0;
+            border-bottom: 0px solid #a33033;
+            height: 0;
+            display: inline-block;
+            text-shadow: none;
+            text-align: center;
+        }
+
+    /*Seven Await*/
+    section.awaitContainer div.awaitImg img {
+        max-width: 250px;
+    }
+
+    /*Territroy Carousel*/
+    section.territoryContainer .sky-carousel .sc-nav-button.sc-next {
+        right: 15%;
+    }
+
+
+    /*Ambassador Carousel*/
+    div#ambassador-carousel.sky-carousel .sc-nav-button.sc-prev {
+        left: 8%;
+    }
+
+    /*Modal*/
+    .modal.fade.in {
+    }
+
+    section.modalVideo a span.playBtn {
+        top: 38%;
+    }
+
+    section.modal-TerritoryLinks section.territoryStrip {
+        left: 1%;
+    }
+
+    section.modal-TerritoryLinks div.logoContainer {
+        width: 14%;
+    }
+
+    div.active.item a > div.dealLink > span {
+        font-size: 22px;
+        padding: 1% 6%;
+    }
+
+    .carousel-indicators {
+        top: 4px;
+        right: 4px;
+    }
+
+    div.ambassadorTitle h5 {
+        font-size: 46px;
+    }
+
+    /*Modal Deals*/
+    section.Deal_Row div.dealPromotion {
+        height: 113px !important;
+        margin-bottom: 2% !important;
+        float: none;
+        width: 100% !important;
+        margin-right: 0px !Important;
+    }
+
+    div.dealPromotion a > div.promoLink > span {
+        font-size: 27px;
+        line-height: 27px;
+        padding: 1% 7%;
+    }
+
+    div.dealPromotion a > div.promoLink {
+        font-weight: 100;
+    }
+
+    #promoRowOne div.dealPromotion:first-child, #promoRowFive div.dealPromotion:last-child {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    /*Modal*/
+    div.modal-dialog {
+        max-width: 450px;
+    }
+
+    div.active.item a > div.dealLink {
+        margin-top: -30px;
+    }
+
+    section.modalVideo a span.playBtn {
+        top: 20%;
+    }
+
+    section.modal-TerritoryLinks section.modal_SevenTerritories {
+        width: 400px;
+    }
+
+    section.modal-TerritoryLinks {
+        display: none;
+    }
+
+    section.modalDeals {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    div.logoOff {
+        top: 10px;
+    }
+
+    div.logoOff {
+        max-width: 38%;
+    }
+
+    .sky-carousel .sc-nav-button.sc-prev {
+        left: 5%;
+    }
+
+    section.territoryContainer .sky-carousel .sc-nav-button.sc-next {
+        right: 5%;
+    }
+
+    div#ambassador-carousel.sky-carousel .sc-nav-button.sc-prev {
+        left: 5%;
+    }
+
+    div#ambassador-carousel.sky-carousel .sc-nav-button.sc-next {
+        right: 5%;
+    }
+
+    /*Modal*/
+    div.modal-dialog {
+        max-width: 400px;
+    }
+
+    .carousel-indicators {
+        top: 1px;
+        right: 1px;
+    }
+
+    div.active.item a > div.dealLink {
+        margin-top: -24px;
+    }
+
+    div.ambassadorTitle h5 {
+        display: block;
+    }
+
+    div.ambassadorTitle span {
+        padding-left: 0%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .sky-carousel .sc-nav-button.sc-prev {
+        left: 1%;
+    }
+
+    section.territoryContainer .sky-carousel .sc-nav-button.sc-next {
+        right: 1%;
+    }
+
+    div#ambassador-carousel.sky-carousel .sc-nav-button.sc-prev {
+        left: 1%;
+    }
+
+    div#ambassador-carousel.sky-carousel .sc-nav-button.sc-next {
+        right: 1%;
+    }
+
+    div.logoOff {
+        top: 12px;
+    }
+
+    section.welcomeLogo {
+        max-width: 98%;
+    }
+
+    section.seizeDetails a {
+        width: 100%;
+    }
+
+    section.seizeDetails a {
+        float: none;
+    }
+
+        section.seizeDetails a:first-child {
+            float: none;
+        }
+
+    section.modalDeals {
+        display: none;
+    }
+
+    section.modal_BottomLogo {
+        max-width: 275px;
+    }
+
+    section.territoryUGC div.UGC_Copy h6:last-child {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    div.mainPromotions div.dealpromo a span {
+        font-size: 29px;
+    }
+}
+
+/* Landscape Iphone 6 and lower */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    div.logoOff {
+        top: 8px;
+    }
+
+    .slicknav_nav a {
+        font-size: 1.8em;
+    }
+}
+
+/*#endregion*/
+
+/*#endregion*/
+
+
+/* #region YOUTUBE POP-UP
+ * --------------------------------------- */
+
+.YouTubePopUp-Wrap {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    background-color: rgba(0,0,0,0.8);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 9999999999999;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: YouTubePopUp;
+    animation-name: YouTubePopUp;
+}
+
+@-webkit-keyframes YouTubePopUp {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes YouTubePopUp {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+body.logged-in .YouTubePopUp-Wrap { /* For WordPress */
+    top: 32px;
+    z-index: 99998;
+}
+
+.YouTubePopUp-Content {
+    max-width: 70%;
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+    right: .5%;
+}
+
+    .YouTubePopUp-Content iframe {
+        max-width: 100% !important;
+        width: 100% !important;
+        display: block !important;
+        height: 600px !important;
+        border: none !important;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+    }
+
+.YouTubePopUp-Hide {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: YouTubePopUpHide;
+    animation-name: YouTubePopUpHide;
+}
+
+@-webkit-keyframes YouTubePopUpHide {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes YouTubePopUpHide {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.YouTubePopUp-Close {
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    bottom: 528px;
+    right: 0px;
+    margin: auto 0;
+    width: 24px;
+    height: 24px;
+    background: url(close.png) no-repeat;
+    background-size: 24px 24px;
+    -webkit-background-size: 24px 24px;
+    -moz-background-size: 24px 24px;
+    -o-background-size: 24px 24px;
+}
+
+    .YouTubePopUp-Close:hover {
+        opacity: 0.5;
+    }
+
+@media all and (max-width: 768px) and (min-width: 10px) {
+    .YouTubePopUp-Content {
+        max-width: 90%;
+    }
+}
+
+@media all and (max-width: 600px) and (min-width: 10px) {
+    .YouTubePopUp-Content iframe {
+        height: 320px !important;
+    }
+
+    .YouTubePopUp-Close {
+        bottom: 362px;
+    }
+}
+
+@media all and (max-width: 480px) and (min-width: 10px) {
+    .YouTubePopUp-Content iframe {
+        height: 220px !important;
+    }
+
+    .YouTubePopUp-Close {
+        bottom: 262px;
+    }
+}
+
+/*#endregion*/
+

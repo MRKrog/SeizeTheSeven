@@ -1,0 +1,1173 @@
+﻿
+/* #region FONTS
+ * --------------------------------------- */
+
+@font-face {
+    font-family: 'dukefill';
+    src: url('../fonts/SeizeFonts/duke-fill-webfont.woff2') format('woff2'), url('../fonts/SeizeFonts/duke-fill-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'Climacons-Font';
+    src: url('/fonts/climacons-webfont.eot');
+    src: url('/fonts/climacons-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/climacons-webfont.svg#Climacons-Font') format('svg'), url('/fonts/climacons-webfont.woff') format('woff'), url('/fonts/climacons-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*#endregion FONTS*/
+
+
+/* #region GLOBAL FORMATTING
+ * --------------------------------------- */
+
+@CHARSET "ISO-8859-1";
+/* Reset CSS
+ * --------------------------------------- */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
+form, fieldset, input, textarea, p, blockquote, th, td {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+table {
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    color: #444;
+}
+
+HTML, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    color: #FFFFFF;
+}
+
+html {
+    background-image: url(../images/Amb/ambBG.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+    z-index: 69;
+}
+
+.section {
+    text-align: center;
+}
+
+
+.imageFull {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/*#endregion*/
+
+
+/*#region Section MENU HEADER
+ * --------------------------------------- */
+
+#header {
+    position: fixed;
+    height: auto;
+    display: block;
+    width: 100%;
+    z-index: 999;
+    background: rgba(243, 230, 203, 0.8);
+    top: 0px;
+    box-shadow: 0 5px 5px 0 rgba(68,68,68,0.6);
+    font-family: 'dukefill';
+    min-height: 52px;
+    -webkit-transition: all ease-in-out .6s;
+    -moz-transition: all ease-in-out .6s;
+    -o-transition: all ease-in-out .6s;
+    transition: all ease-in-out .6s;
+}
+
+
+    #header:hover {
+        min-height: 120px;
+    }
+
+
+    #header div.mainLogo {
+        display: inline-block;
+        position: absolute;
+        top: 0px;
+        z-index: 1050;
+    }
+
+        #header div.mainLogo a {
+            display: inline-block;
+            padding: 10px 10px 10px 8px;
+        }
+
+        #header div.mainLogo img {
+            width: 100%;
+            max-width: 100%;
+            /*animation effects*/
+            -moz-animation-duration: .2s;
+            -webkit-animation-delay: .2s;
+            -o-animation-iteration-count: infinite;
+        }
+
+    #header div.mainLogo {
+        width: 100%;
+        max-width: 153px;
+        background-color: #a33033;
+        -webkit-transition: all ease-in-out .7s;
+        -moz-transition: all ease-in-out .7s;
+        -o-transition: all ease-in-out .7s;
+        transition: all ease-in-out .7s;
+    }
+
+        #header div.mainLogo:hover {
+            background-color: #000;
+        }
+
+    #header ul {
+        width: 90%;
+        display: inline-block;
+        position: absolute;
+        bottom: 0px;
+        right: 0;
+        padding: 0 0 3px 0;
+    }
+
+        #header ul li {
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        #header ul li {
+            margin-left: 1.8%;
+            position: relative;
+            bottom: 0;
+            z-index: 99999;
+            float: left;
+            text-align: center;
+        }
+
+
+            #header ul li:not(:last-child) {
+                padding-right: 1.8%;
+            }
+
+    #header li a {
+        text-decoration: none;
+        color: #a33033;
+        display: inline-block;
+        line-height: 94%;
+    }
+
+        #header li a.activeAmb {
+            color: #231f20;
+            cursor: default;
+        }
+
+    #header li > a > span.name {
+        font-size: 1.8em;
+        font-family: 'dukefill';
+        font-weight: 100;
+        font-style: normal;
+    }
+
+    #header li > a > span {
+        font-size: 14px;
+        font-family: "Whitney A", "Whitney B";
+        font-weight: 700;
+        font-style: italic;
+        line-height: 6px;
+    }
+
+    #header li a.firstNav {
+        text-decoration: none;
+        display: block;
+        padding: 10% 10%;
+    }
+
+    #header li a:hover {
+        color: #231f20;
+        -webkit-transition: all ease-in-out .7s;
+        -moz-transition: all ease-in-out .7s;
+        -o-transition: all ease-in-out .7s;
+        transition: all ease-in-out .7s;
+        text-decoration: none;
+        opacity: 1;
+    }
+
+    #header li.active a {
+        color: #231f20;
+    }
+
+    #header li a div {
+        padding-bottom: 12px;
+    }
+
+        #header li a div img {
+            width: 65px;
+        }
+/*#region Slick Body*/
+
+div.logoOff {
+    display: none;
+}
+
+.slicknav_menu ul {
+}
+
+    .slicknav_menu ul li {
+        clear: both;
+    }
+
+        .slicknav_menu ul li a {
+            line-height: 12px;
+            width: 100%;
+            display: inline-block;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+
+            .slicknav_menu ul li a:hover {
+            }
+
+            .slicknav_menu ul li a div {
+                display: inline-block;
+                float: left;
+                margin-right: 1%;
+            }
+
+                .slicknav_menu ul li a div img {
+                    width: 70px;
+                }
+
+            .slicknav_menu ul li a span.name {
+                font-size: 2em;
+                font-family: 'dukefill';
+                font-weight: 100;
+                font-style: normal;
+                margin-top: 1.8%;
+                display: block;
+            }
+
+            .slicknav_menu ul li a span {
+                font-size: 20px;
+                font-family: "Whitney A", "Whitney B";
+                font-weight: 700;
+                font-style: italic;
+            }
+
+.slicknav_menu {
+    display: none;
+}
+
+.slicknav_btn, .slicknav_nav .slicknav_item {
+    cursor: pointer;
+}
+
+.slicknav_menu, .slicknav_menu * {
+    box-sizing: border-box;
+}
+
+.slicknav_btn {
+    position: relative;
+    display: block;
+    vertical-align: middle;
+    float: right;
+    padding: .438em .625em;
+    line-height: 1.125em;
+}
+
+    .slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar {
+        margin-top: .188em;
+    }
+
+.slicknav_menu .slicknav_menutxt {
+    display: block;
+    line-height: 1.188em;
+    float: left;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 0 1px 3px #000;
+}
+
+.slicknav_menu .slicknav_icon {
+    float: left;
+    width: 1.125em;
+    height: .875em;
+    margin: .188em 0 0 .438em;
+}
+
+    .slicknav_menu .slicknav_icon:before {
+        background: 0 0;
+        width: 1.125em;
+        height: .875em;
+        display: block;
+        content: "";
+        position: absolute;
+    }
+
+.slicknav_menu .slicknav_no-text {
+    margin: 0;
+}
+
+.slicknav_menu .slicknav_icon-bar {
+    display: block;
+    width: 1.125em;
+    height: .125em;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,.25);
+    -moz-box-shadow: 0 1px 0 rgba(0,0,0,.25);
+    box-shadow: 0 1px 0 rgba(0,0,0,.25);
+}
+
+.slicknav_menu:after, .slicknav_menu:before {
+    content: " ";
+    display: table;
+}
+
+.slicknav_menu:after {
+    clear: both;
+}
+
+.slicknav_nav li, .slicknav_nav ul {
+    display: block;
+}
+
+.slicknav_nav .slicknav_arrow {
+    font-size: .8em;
+    margin: 0 0 0 .4em;
+}
+
+.slicknav_nav .slicknav_item a {
+    display: inline;
+}
+
+.slicknav_nav .slicknav_row, .slicknav_nav a {
+    display: block;
+}
+
+.slicknav_nav .slicknav_parent-link a {
+    display: inline;
+}
+
+.slicknav_menu {
+    *zoom: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: auto;
+    z-index: 1039;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.slicknav_nav, .slicknav_nav ul {
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+}
+
+.slicknav_menu .slicknav_icon-bar {
+    background-color: #fff;
+}
+
+.slicknav_btn {
+    margin: 5px 5px 6px;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(255,255,255,.75);
+    background-color: #222;
+}
+
+.slicknav_nav {
+    clear: both;
+    color: #a33033;
+    margin: 0;
+    font-size: 1em;
+}
+
+    .slicknav_nav ul {
+        margin: 0 0 0 5px;
+    }
+
+    .slicknav_nav .slicknav_row, .slicknav_nav a {
+        border-top: #e8ddc8 2px solid;
+    }
+
+        .slicknav_nav .slicknav_row:hover {
+            background: #ccc;
+            color: #231f20;
+        }
+
+    .slicknav_nav a {
+        text-decoration: none;
+        color: #a33033;
+    }
+
+        .slicknav_nav a:hover {
+            background: #e8ddc8;
+            color: #231f20;
+        }
+
+    .slicknav_nav .slicknav_txtnode {
+        margin-left: 15px;
+    }
+
+    .slicknav_nav .slicknav_item a, .slicknav_nav .slicknav_parent-link a {
+        padding: 0;
+        margin: 0;
+    }
+
+.slicknav_brand {
+    float: left;
+    color: #fff;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 7px 12px;
+    height: 44px;
+}
+
+
+/*#endregion*/
+
+/*#endregion*/
+
+
+/* #region HOMEPAGE
+ * --------------------------------------- */
+
+/*#region Territory Backgrounds*/
+
+#WP_Story, #VR_Story, #PB_Story, #TP_Story, #MJ_Story, #EW_Story, #TC_Story, #TV_Story {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+    z-index: 70;
+}
+
+#WP_Story {
+    background-image: url(../images/Amb/WP_BG.jpg);
+}
+
+#VR_Story {
+    background-image: url(../images/Amb/VR_BG.jpg);
+}
+
+#PB_Story {
+    background-image: url(../images/Amb/PB_BG.jpg);
+}
+
+#TP_Story {
+    background-image: url(../images/Amb/TP_BG.jpg);
+}
+
+#MJ_Story {
+    background-image: url(../images/Amb/MJ_BG.jpg);
+}
+
+#EW_Story {
+    background-image: url(../images/Amb/EW_BG.jpg);
+}
+
+#TC_Story {
+    background-image: url(../images/Amb/TC_BG.jpg);
+}
+
+#TV_Story {
+    background-image: url(../images/Amb/TV_BG.jpg);
+}
+
+/*#endregion*/
+
+div.intro {
+    background-image: url(../images/Amb/container_BG.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+    z-index: 71;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1%;
+    box-shadow: 0px 0px 35px rgba(68,68,68,0.8);
+    position: relative;
+    top: -4%;
+}
+
+    div.intro section.Top_Intro {
+        max-width: 700px;
+        margin: 0 auto;
+        padding-bottom: 1%;
+    }
+
+    div.intro section.Bottom_Intro {
+        display: inline-block;
+        max-width: 683px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+        div.intro section.Bottom_Intro div.Tagline_Intro {
+            float: left;
+            width: 58%;
+            max-width: 385px;
+            margin-right: 3%;
+        }
+
+            div.intro section.Bottom_Intro div.Tagline_Intro h2 {
+                font-family: "Whitney A", "Whitney B";
+                font-style: italic;
+                font-weight: 700;
+                font-size: 38px;
+                color: #000;
+                text-align: left;
+                line-height: 40px;
+                text-transform: uppercase;
+            }
+
+        div.intro section.Bottom_Intro div.Support_Intro {
+            float: left;
+            width: 41%;
+            max-width: 267px;
+        }
+
+            div.intro section.Bottom_Intro div.Support_Intro div.Photo_Intro {
+                float: left;
+                width: 49%;
+                max-width: 130px;
+                margin-right: 3%;
+            }
+
+                div.intro section.Bottom_Intro div.Support_Intro div.Photo_Intro img {
+                    max-width: 124px;
+                }
+
+            div.intro section.Bottom_Intro div.Support_Intro div.Social_Intro {
+                float: left;
+                width: 43%;
+                max-width: 111px;
+                margin-left: 4%;
+                line-height: 18px;
+                text-align: left;
+            }
+
+                div.intro section.Bottom_Intro div.Support_Intro div.Social_Intro h6.Header_H4 {
+                    font-family: "Whitney A", "Whitney B";
+                    display: inline-block;
+                    color: #fff;
+                    text-transform: uppercase;
+                    padding-bottom: 3%;
+                    font-weight: bold;
+                    font-size: 18px;
+                    font-style: italic;
+                    border-bottom: #fff 2px solid;
+                }
+
+                div.intro section.Bottom_Intro div.Support_Intro div.Social_Intro div.Social_Icons {
+                    display: inline-block;
+                    width: 100%;
+                    margin-top: 9%;
+                }
+
+                    div.intro section.Bottom_Intro div.Support_Intro div.Social_Intro div.Social_Icons a {
+                        float: left;
+                        max-width: 51px;
+                        width: 100%;
+                        -webkit-transition: all 0.3s linear;
+                        -o-transition: all 0.3s linear;
+                        transition: all 0.3s linear;
+                    }
+
+                        div.intro section.Bottom_Intro div.Support_Intro div.Social_Intro div.Social_Icons a:hover {
+                            opacity: .5;
+                        }
+
+                        div.intro section.Bottom_Intro div.Support_Intro div.Social_Intro div.Social_Icons a:first-child {
+                            margin-right: 8%;
+                        }
+
+
+/*#region Specialty Homepage Styling*/
+#TP_Story h6.Header_H4, #EW_Story h6.Header_H4 {
+    font-size: 18px;
+}
+
+#TP_Story div.Social_Intro, #EW_Story div.Social_Intro {
+    line-height: 12px;
+}
+
+#WP_Story div.Tagline_Intro h2, #EW_Story div.Tagline_Intro h2 {
+    font-size: 35px;
+}
+
+#WP_Story div.Tagline_Intro h2 {
+    color: #8b2332;
+}
+
+#VR_Story div.Tagline_Intro h2 {
+    color: #c17841;
+}
+
+#PB_Story div.Tagline_Intro h2 {
+    color: #0a5d66;
+}
+
+#TP_Story div.Tagline_Intro h2 {
+    color: #231f20;
+    font-size: 34px;
+}
+
+#MJ_Story div.Tagline_Intro h2 {
+    color: #001c71;
+}
+
+#EW_Story div.Tagline_Intro h2 {
+    color: #90292a;
+}
+
+#TV_Story div.Tagline_Intro h2 {
+    color: #231f20;
+}
+
+
+section.MJ_Intro {
+    width: 100%;
+}
+
+    section.MJ_Intro span {
+        font-family: 'dukefill';
+        font-size: 28px;
+        text-transform: uppercase;
+        font-style: normal;
+        text-decoration: underline;
+    }
+
+div.mjCopy {
+    font-family: "Whitney A", "Whitney B";
+    font-size: 20px;
+    color: #231f20;
+    padding-top: 1%;
+    text-align: left;
+}
+
+    div.mjCopy ul {
+        margin-left: 22px;
+    }
+
+        div.mjCopy ul li {
+            line-height: 22px;
+            font-size: 17px;
+        }
+
+/*#endregion*/
+
+
+/*#endregion HOMEPAGE */
+
+
+/* #region Section Two
+ * --------------------------------------- */
+h3.SectionTwo {
+    font-size: 3em;
+    font-family: "Tungsten A", "Tungsten B";
+    color: #a33033;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1em;
+}
+
+
+/*#endregion Footer*/
+
+
+/* #region FOOTER
+ * --------------------------------------- */
+#footer {
+    position: fixed;
+    height: 51px;
+    display: block;
+    width: 100%;
+    z-index: 9;
+    background: rgba(243, 230, 203, 0.95);
+    background-image: url(../images/Amb/BottomNav.gif);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+    z-index: 999;
+    bottom: 0px;
+}
+
+h3.footerH3 {
+    font-size: 3em;
+    font-family: "Tungsten A", "Tungsten B";
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1em;
+}
+
+
+/*#endregion Footer*/
+
+
+
+@media screen and (max-width: 1450px) {
+    #header ul {
+        padding: 0 0 4px 0;
+        width: 89%;
+    }
+
+        #header ul li {
+            margin-left: 1%;
+        }
+
+            #header ul li:first-child {
+                margin-left: 1.8%;
+            }
+}
+
+@media screen and (max-width: 1320px) {
+    #header ul {
+        padding: 0 0 6px 0;
+        width: 88%;
+    }
+
+    #header li a div {
+        padding-bottom: 9px;
+    }
+
+    #header li > a > span.name {
+        font-size: 1.5em;
+    }
+
+    #header li > a > span {
+        font-size: 12px;
+    }
+
+    #header ul li {
+        margin-left: 1.8%;
+    }
+}
+
+@media screen and (max-width: 1220px) {
+    #header ul {
+        width: 87%;
+    }
+
+        #header ul li {
+            margin-left: 1%;
+        }
+}
+
+@media screen and (max-width: 1120px) {
+    #header ul {
+        width: 86%;
+    }
+
+        #header ul li:not(:last-child) {
+            padding-right: 1%;
+        }
+}
+
+@media screen and (max-width: 1050px) {
+    #header ul {
+        width: 85%;
+    }
+
+        #header ul li:not(:last-child) {
+            padding-right: 1.8%;
+        }
+
+    #header li > a > span.name {
+        font-size: 1.3em;
+    }
+
+    #header li > a > span {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 1010px) {
+    #header ul {
+        width: 84%;
+    }
+
+        #header ul li:not(:last-child) {
+            padding-right: 1%;
+        }
+}
+
+@media screen and (max-width: 960px) {
+    #header ul li:first-child {
+        margin-left: 1%;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .slicknav_menu div.mainLogo {
+        display: none;
+    }
+
+    div.logoOff {
+        display: block;
+        position: fixed;
+        z-index: 1040;
+        width: 100%;
+        max-width: 23%;
+        top: 4px;
+        left: 15px;
+    }
+
+        div.logoOff a {
+            display: inline-block;
+        }
+
+    .slicknav_menu {
+        background: rgba(243, 230, 203, 1) !Important;
+        font-family: 'dukefill';
+    }
+
+    /* #menu is the original menu */
+    #header {
+        display: none;
+    }
+
+    .slicknav_menu {
+        display: block;
+    }
+
+    li#navSpacer {
+        display: none;
+    }
+
+    /*Navigation*/
+    #header ul li {
+        display: block;
+    }
+
+    li.slicknav_txtnode {
+        display: none !Important;
+    }
+
+    li.heading-logo {
+        display: none !Important;
+    }
+
+    div.logoOff {
+        display: block;
+    }
+
+        div.logoOff a img {
+            height: auto;
+            max-width: 100%;
+            vertical-align: middle;
+            border: 0;
+        }
+}
+
+@media screen and (max-width: 800px) {
+    div.logoOff {
+        max-width: 28%;
+        top: 5px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    div.logoOff {
+        max-width: 30%;
+        top: 5px;
+    }
+
+    .slicknav_menu ul li a {
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+
+        .slicknav_menu ul li a div img {
+            width: 55px;
+        }
+
+        .slicknav_menu ul li a span.name {
+            font-size: 1.8em;
+        }
+
+        .slicknav_menu ul li a span {
+            font-size: 18px;
+        }
+}
+
+@media screen and (max-width:750px) {
+    div.intro {
+        max-width: 575px;
+    }
+
+        div.intro section.Top_Intro {
+            max-width: 95%;
+            width: 100%;
+        }
+
+        div.intro section.Bottom_Intro {
+            max-width: 95%;
+            width: 100%;
+        }
+
+            div.intro section.Bottom_Intro div.Tagline_Intro {
+                width: 56%;
+                max-width: 100%;
+            }
+
+                div.intro section.Bottom_Intro div.Tagline_Intro h2 {
+                    line-height: 37px;
+                    font-size: 30px;
+                }
+
+            div.intro section.Bottom_Intro div.Support_Intro {
+                width: 39%;
+                max-width: 100%;
+            }
+
+                div.intro section.Bottom_Intro div.Support_Intro div.Photo_Intro {
+                    width: 50%;
+                    max-width: 100%;
+                }
+
+                div.intro section.Bottom_Intro div.Support_Intro div.Social_Intro {
+                    width: 43%;
+                    max-width: 100%;
+                }
+
+                    div.intro section.Bottom_Intro div.Support_Intro div.Social_Intro h6.Header_H4 {
+                        font-size: 15px;
+                    }
+
+                    div.intro section.Bottom_Intro div.Support_Intro div.Social_Intro div.Social_Icons a {
+                        max-width: 45%;
+                        width: 100%;
+                    }
+
+    /*#region Specialty Homepage Styling*/
+
+    #WP_Story div.Tagline_Intro h2, #EW_Story div.Tagline_Intro h2, #TP_Story div.Tagline_Intro h2 {
+        line-height: 37px;
+        font-size: 27px;
+    }
+
+    #TP_Story div.Social_Intro, #EW_Story div.Social_Intro {
+        line-height: 18px;
+    }
+
+    section.MJ_Intro {
+        padding: 1%;
+    }
+
+    /*#endregion*/
+}
+
+@media screen and (max-width:600px) {
+    div.intro {
+        max-width: 500px;
+    }
+
+        div.intro section.Bottom_Intro div.Tagline_Intro h2 {
+            line-height: 33px;
+            font-size: 26px;
+        }
+
+        div.intro section.Bottom_Intro div.Support_Intro div.Social_Intro h6.Header_H4 {
+            font-size: 13px;
+        }
+
+    /*#region Specialty Homepage Styling*/
+    #WP_Story div.Tagline_Intro h2, #EW_Story div.Tagline_Intro h2 {
+        line-height: 30px;
+        font-size: 24px;
+    }
+
+    #TP_Story div.Tagline_Intro h2 {
+        line-height: 30px;
+        font-size: 23px;
+    }
+    /*#endregion*/
+}
+
+@media screen and (max-width:525px) {
+    div.intro {
+        max-width: 425px;
+    }
+
+        div.intro section.Bottom_Intro div.Tagline_Intro h2 {
+            line-height: 28px;
+            font-size: 22px;
+        }
+
+        div.intro section.Bottom_Intro div.Support_Intro div.Social_Intro h6.Header_H4 {
+            font-size: 13px;
+        }
+
+    /*#region Specialty Homepage Styling*/
+    #WP_Story div.Tagline_Intro h2, #EW_Story div.Tagline_Intro h2, #TP_Story div.Tagline_Intro h2 {
+        line-height: 26px;
+        font-size: 20px;
+    }
+    /*#endregion*/
+}
+
+@media screen and (max-width:450px) {
+    div.intro {
+        max-width: 350px;
+    }
+
+        div.intro section.Bottom_Intro div.Tagline_Intro h2 {
+            line-height: 21px;
+            font-size: 15px;
+        }
+
+        div.intro section.Bottom_Intro div.Support_Intro div.Social_Intro h6.Header_H4 {
+            font-size: 12px;
+            display: none;
+        }
+
+        div.intro section.Bottom_Intro div.Tagline_Intro {
+            margin-right: 1%;
+        }
+
+        div.intro section.Bottom_Intro div.Support_Intro {
+            width: 42%;
+        }
+
+    h6.Header_H4 {
+        text-align: center;
+    }
+
+    .slicknav_menu ul li a div img {
+        width: 48px;
+    }
+
+    div.logoOff {
+        max-width: 50%;
+        top: 10px;
+    }
+
+    /*#region Specialty Homepage Styling*/
+    #WP_Story div.Tagline_Intro h2, #EW_Story div.Tagline_Intro h2, #TP_Story div.Tagline_Intro h2 {
+        line-height: 21px;
+        font-size: 15px;
+    }
+    /*#endregion*/
+}
+
+/* Landscape Iphone 6 and lower */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    div.intro {
+        max-width: 500px;
+        top: 0%;
+    }
+
+    #WP_Story div.Tagline_Intro h2, #EW_Story div.Tagline_Intro h2, #VR_Story div.Tagline_Intro h2, #PB_Story div.Tagline_Intro h2, #TP_Story div.Tagline_Intro h2, #TC_Story div.Tagline_Intro h2, #TV_Story div.Tagline_Intro h2 {
+        line-height: 25px;
+        font-size: 22px;
+    }
+
+    .slicknav_menu ul li a div img {
+        width: 40px;
+    }
+
+    .slicknav_menu ul li a span.name {
+        font-size: 1.3em;
+        margin-top: .5%;
+    }
+
+    .slicknav_menu ul li a span {
+        font-size: 15px;
+    }
+
+    .slicknav_menu ul li a {
+        line-height: 10px;
+    }
+
+    .slicknav_menu ul li a {
+        padding-top: 0.2%;
+        padding-bottom: 0.2%;
+    }
+}
+
+/* Landscape Iphone 6 and lower */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    div.intro {
+        max-width: 331px;
+        top: 0%;
+    }
+
+    #WP_Story div.Tagline_Intro h2, #EW_Story div.Tagline_Intro h2, #VR_Story div.Tagline_Intro h2, #PB_Story div.Tagline_Intro h2, #TP_Story div.Tagline_Intro h2, #TC_Story div.Tagline_Intro h2, #TV_Story div.Tagline_Intro h2 {
+        line-height: 21px;
+        font-size: 16px;
+    }
+
+    div.intro section.Bottom_Intro div.Support_Intro div.Social_Intro h6.Header_H4 {
+        display: none;
+    }
+
+    .slicknav_menu ul li a div img {
+        display: none;
+    }
+
+    .slicknav_menu ul li a span.name {
+        font-size: 1em;
+        margin-top: 0%;
+    }
+
+    .slicknav_menu ul li a span {
+        font-size: 12px;
+    }
+
+    .slicknav_menu ul li a {
+        line-height: 7px;
+    }
+}
+
+
+/* Iphone 4 */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
